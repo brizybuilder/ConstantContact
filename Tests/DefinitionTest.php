@@ -153,6 +153,14 @@ class DefinitionTest extends \PHPUnit\Framework\TestCase
 		$fixture->class = 'class';
 		}
 
+	public function testConstructArrayIntoLengthCheckedString() : void
+		{
+		$value = ['a', 'b'];
+		$fixture = $this->withErrorsAsExceptions(static fn () => new \Tests\Fixtures\Type(['string' => $value]));
+
+		$this->assertEquals(['string' => $value], $fixture->getData());
+		}
+
 	public function testConstructFromArray() : void
 		{
 		$original = [
@@ -179,6 +187,13 @@ class DefinitionTest extends \PHPUnit\Framework\TestCase
 		$fixture = new \Tests\Fixtures\Type($original);
 
 		$this->assertEquals($testClass, $fixture->class);
+		}
+
+	public function testConstructNullIntoLengthCheckedString() : void
+		{
+		$fixture = $this->withErrorsAsExceptions(static fn () => new \Tests\Fixtures\Type(['string' => null]));
+
+		$this->assertEquals(['string' => null], $fixture->getData());
 		}
 
 	public function testDefaultObjects() : void
@@ -292,5 +307,27 @@ class DefinitionTest extends \PHPUnit\Framework\TestCase
 		$fixture = new \Tests\Fixtures\Type();
 		$this->expectException(\PHPFUI\ConstantContact\Exception\InvalidLength::class);
 		$fixture->string = 'fred';
+		}
+
+	/**
+	 * Run $callback with PHP warnings and deprecations converted to exceptions, independent of the PHPUnit configuration.
+	 *
+	 * @return mixed
+	 */
+	private function withErrorsAsExceptions(callable $callback)
+		{
+		\set_error_handler(static function(int $severity, string $message, string $file, int $line) : bool
+			{
+			throw new \ErrorException($message, 0, $severity, $file, $line);
+			});
+
+		try
+			{
+			return $callback();
+			}
+		finally
+			{
+			\restore_error_handler();
+			}
 		}
 	}

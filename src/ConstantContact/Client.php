@@ -147,7 +147,7 @@ class Client
             return $this->statusCode >= 200 && $this->statusCode < 300;
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $this->lastError = $e->getMessage();
-            $this->statusCode = $e->getResponse()->getStatusCode();
+            $this->statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
         }
 
         return false;
@@ -174,7 +174,7 @@ class Client
             return $this->process($response);
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $this->lastError = $e->getMessage();
-            $this->statusCode = $e->getResponse()->getStatusCode();
+            $this->statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
         }
 
         return [];
@@ -278,7 +278,7 @@ class Client
             return $this->process($response);
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $this->lastError = $e->getMessage();
-            $this->statusCode = $e->getResponse()->getStatusCode();
+            $this->statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
         }
 
         return [];
@@ -310,7 +310,7 @@ class Client
             return $this->process($response);
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $this->lastError = $e->getMessage();
-            $this->statusCode = $e->getResponse()->getStatusCode();
+            $this->statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
         }
 
         return [];

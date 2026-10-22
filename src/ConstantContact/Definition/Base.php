@@ -200,7 +200,7 @@ abstract class Base
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at least {$minLength}");
 				}
-			elseif (\strlen($value) < $minLength)
+			elseif ((\is_scalar($value) || (\is_object($value) && \method_exists($value, '__toString'))) && \strlen((string)$value) < $minLength)
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at least {$minLength} characters long");
 				}
@@ -221,7 +221,7 @@ abstract class Base
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be equal or less than {$maxLength}");
 				}
-			elseif (\strlen($value) > $maxLength)
+			elseif ((\is_scalar($value) || (\is_object($value) && \method_exists($value, '__toString'))) && \strlen((string)$value) > $maxLength)
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at less than {$maxLength} characters long");
 				}
