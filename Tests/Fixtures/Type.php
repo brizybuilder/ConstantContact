@@ -4,7 +4,7 @@ namespace Tests\Fixtures;
 
 class Type extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static array $fields = [
+	protected static $fields = [
 		'boolean' => 'bool',
 		'integer' => 'int',
 		'string' => 'string',
@@ -19,12 +19,12 @@ class Type extends \PHPFUI\ConstantContact\Definition\Base
 		'classArraySizeMin' => 'array<\\Tests\\Fixtures\\ClassTester>',
 	];
 
-	protected static array $maxLength = [
+	protected static $maxLength = [
 		'string' => 50,
 		'classArraySize' => 3,
 	];
 
-	protected static array $minLength = [
+	protected static $minLength = [
 		'string' => 10,
 		'classArraySizeMin' => 2,
 	];
