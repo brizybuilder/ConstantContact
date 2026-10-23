@@ -16,7 +16,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class SendsTrackingActivity extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_id' => '\PHPFUI\ConstantContact\UUID',
 		'campaign_activity_id' => '\PHPFUI\ConstantContact\UUID',
 		'tracking_activity_type' => 'string',

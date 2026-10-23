@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class Exclude extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_ids' => 'array<\PHPFUI\ConstantContact\UUID>',
 
 	];

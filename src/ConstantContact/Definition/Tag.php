@@ -14,7 +14,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class Tag extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'tag_id' => '\PHPFUI\ConstantContact\UUID',
 		'name' => 'string',
 		'contacts_count' => 'int',

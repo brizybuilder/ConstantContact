@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class BouncesTrackingActivitiesPage extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'tracking_activities' => 'array<\PHPFUI\ConstantContact\Definition\BouncesTrackingActivity>',
 		'_links' => '\PHPFUI\ConstantContact\Definition\ReportingLinks',
 

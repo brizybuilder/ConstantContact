@@ -13,7 +13,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class SegmentDetail extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'name' => 'string',
 		'segment_criteria' => 'string',
 		'segment_id' => 'int',
@@ -22,7 +22,7 @@ class SegmentDetail extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'segment_criteria' => 20000,
 
 	];

@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class HeadersObject extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'header_key' => 'string',
 		'header_value' => 'string',
 

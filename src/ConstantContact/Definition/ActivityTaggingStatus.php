@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ActivityTaggingStatus extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'items_total_count' => 'int',
 		'items_completed_count' => 'int',
 

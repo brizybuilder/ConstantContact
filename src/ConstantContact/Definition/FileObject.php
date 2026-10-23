@@ -26,7 +26,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class FileObject extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'id' => 'int',
 		'name' => 'string',
 		'height' => 'int',

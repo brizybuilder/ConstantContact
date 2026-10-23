@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ActivityStatusLink extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'ActivityStatusLink' => '\PHPFUI\ConstantContact\Definition\ActivityStatusLink',
 
 	];

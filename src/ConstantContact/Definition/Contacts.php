@@ -12,7 +12,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class Contacts extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contacts' => 'array<\PHPFUI\ConstantContact\Definition\ContactResource>',
 		'contacts_count' => 'int',
 		'_links' => '\PHPFUI\ConstantContact\Definition\PagingLinks',

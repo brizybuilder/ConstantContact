@@ -19,7 +19,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class CustomerPut extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_email' => 'string',
 		'contact_phone' => 'string',
 		'country_code' => 'string',
@@ -34,7 +34,7 @@ class CustomerPut extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'contact_phone' => 25,
 
 	];

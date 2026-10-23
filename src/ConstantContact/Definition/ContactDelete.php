@@ -10,13 +10,13 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ContactDelete extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_ids' => 'array<\PHPFUI\ConstantContact\UUID>',
 		'list_ids' => 'array<\PHPFUI\ConstantContact\UUID>',
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'contact_ids' => 500,
 		'list_ids' => 50,
 

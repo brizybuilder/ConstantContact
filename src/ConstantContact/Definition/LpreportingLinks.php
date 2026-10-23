@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class LpreportingLinks extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'next' => '\PHPFUI\ConstantContact\Definition\LpreportingNext',
 
 	];

@@ -16,7 +16,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class EmailCampaignActivityPreview extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'campaign_activity_id' => 'string',
 		'from_email' => 'string',
 		'from_name' => 'string',

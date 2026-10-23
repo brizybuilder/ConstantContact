@@ -12,7 +12,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ContactOpenAndClickRates extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_id' => '\PHPFUI\ConstantContact\UUID',
 		'included_activities_count' => 'int',
 		'average_open_rate' => 'float',

@@ -20,7 +20,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ContactCreateOrUpdateInput extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'email_address' => 'string',
 		'first_name' => 'string',
 		'last_name' => 'string',
@@ -36,7 +36,7 @@ class ContactCreateOrUpdateInput extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'email_address' => 50,
 		'first_name' => 50,
 		'last_name' => 50,
@@ -48,12 +48,12 @@ class ContactCreateOrUpdateInput extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $minLength = [
+	protected static array $minLength = [
 		'list_memberships' => 1,
 
 	];
 
-	protected static $requiredFields = [
+	protected static array $requiredFields = [
 		'kind',
 
 	];

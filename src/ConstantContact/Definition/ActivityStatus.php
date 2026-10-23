@@ -15,7 +15,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ActivityStatus extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'items_total_count' => 'int',
 		'items_completed_count' => 'int',
 		'person_count' => 'int',

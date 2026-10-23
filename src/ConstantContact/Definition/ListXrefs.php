@@ -9,12 +9,12 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ListXrefs extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'xrefs' => 'array<\PHPFUI\ConstantContact\Definition\ListXref>',
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'xrefs' => 500,
 
 	];

@@ -16,37 +16,37 @@ abstract class Base
 	 * - array&lt;FQN&gt;
 	 * - array of case sensitive string or integer enums
 	 */
-	protected static $fields = [];
+	protected static array $fields = [];
 
 	/**
 	 * @var array<string, int> maximum allowed values. Arrays are size, int and float are values, strings are length.
 	 */
-	protected static $maxLength = [];
+	protected static array $maxLength = [];
 
 	/**
 	 * @var array<string, int> minimum allowed values. Arrays are size, int and float are values, strings are length.
 	 */
-	protected static $minLength = [];
+	protected static array $minLength = [];
 
 	/**
 	 * @var array<string> required fields.
 	 */
-	protected static $requiredFields = [];
+	protected static array $requiredFields = [];
 
 	/**
 	 * @var bool $constructingFromArray set to true if we are constructing from an array so we don't type check for objects
 	 */
-	private $constructingFromArray = false;
+	private bool $constructingFromArray = false;
 
   /**
    * $var array<string, mixed> the actual object data by field name.
    */
-	private $data = [];
+	private array $data = [];
 
 	/**
 	 * @var array<string, bool> supported scalars
 	 */
-	private static $scalars = [
+	private static array $scalars = [
 		'bool' => true,
 		'float' => true,
 		'int' => true,
@@ -57,7 +57,7 @@ abstract class Base
   /**
    * @var array<string, bool> indicates which values are set to reduce data output.
    */
-	private $setFields = [];
+	private array $setFields = [];
 
 	public function __construct(array $initialValues = [])
 		{
@@ -65,7 +65,7 @@ abstract class Base
 			{
 			$actualField = $field;
 
-			if (\strpos($field, 'cf_')===0)
+			if (\str_starts_with($field, 'cf_'))
 				{
 				$field = 'cf:custom_field_name';
 				}
@@ -84,7 +84,7 @@ abstract class Base
 				}
 			elseif (! \is_array($type) && ! isset(self::$scalars[$type]))
 				{
-				if (\strpos($type, 'array')===0)
+				if (\str_starts_with($type, 'array'))
 					{
 					$this->data[$actualField] = [];
 					}
@@ -103,7 +103,7 @@ abstract class Base
 		{
 		$actualField = $field;
 
-		if (\strpos($field, 'cf_')===0)
+		if (\str_starts_with($field, 'cf_'))
 			{
 			$field = 'cf:custom_field_name';
 			}
@@ -125,7 +125,7 @@ abstract class Base
 		{
 		$actualField = $field;
 
-		if (\strpos($field, 'cf_')===0)
+		if (\str_starts_with($field, 'cf_'))
 			{
 			$field = 'cf:custom_field_name';
 			}
@@ -136,7 +136,7 @@ abstract class Base
 			throw new \PHPFUI\ConstantContact\Exception\InvalidField(static::class . "::{$actualField} is not a valid field");
 			}
 
-		$type = \gettype($value);
+		$type = \get_debug_type($value);
 
 		if (\is_array($expectedType))
 			{
@@ -149,7 +149,7 @@ abstract class Base
 			{
 			$expectedType = \trim($expectedType, '\\');
 
-			if ('array' == $type && \strpos($expectedType, 'array')===0)
+			if ('array' == $type && \str_starts_with($expectedType, 'array'))
 				{
 				$arrayStart = \strpos($expectedType, '<');
 
@@ -162,7 +162,7 @@ abstract class Base
 
 					foreach ($value as $index => $element)
 						{
-						$elementType = \gettype($element);
+						$elementType = \get_debug_type($element);
 
 						// convert members of the array to the correct type if not a standard type
 						if ($convertToObjects && ! \is_object($element))
@@ -189,7 +189,7 @@ abstract class Base
 			{
 			$minLength = static::$minLength[$field];
 
-			if ('array' == $type && \strpos($expectedType, 'array')===0)
+			if ('array' == $type && \str_starts_with($expectedType, 'array'))
 				{
 				if (\count($value) < $minLength)
 					{
@@ -200,7 +200,7 @@ abstract class Base
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at least {$minLength}");
 				}
-			elseif (\strlen($value) < $minLength)
+			elseif ((\is_scalar($value) || $value instanceof \Stringable) && \strlen((string)$value) < $minLength)
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at least {$minLength} characters long");
 				}
@@ -210,7 +210,7 @@ abstract class Base
 			{
 			$maxLength = static::$maxLength[$field];
 
-			if ('array' == $type && \strpos($expectedType, 'array')===0)
+			if ('array' == $type && \str_starts_with($expectedType, 'array'))
 				{
 				if (\count($value) > $maxLength)
 					{
@@ -221,7 +221,7 @@ abstract class Base
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be equal or less than {$maxLength}");
 				}
-			elseif (\strlen($value) > $maxLength)
+			elseif ((\is_scalar($value) || $value instanceof \Stringable) && \strlen((string)$value) > $maxLength)
 				{
 				throw new \PHPFUI\ConstantContact\Exception\InvalidLength(static::class . "::{$actualField} must be at less than {$maxLength} characters long");
 				}

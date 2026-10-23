@@ -19,7 +19,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class HistoryDetails extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'state' => 'string',
 		'source' => 'string',
 		'consent_type' => 'string',

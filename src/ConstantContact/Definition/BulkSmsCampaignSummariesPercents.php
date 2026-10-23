@@ -12,7 +12,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class BulkSmsCampaignSummariesPercents extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'deliver' => 'int',
 		'click' => 'int',
 		'bounce' => 'int',

@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class PartnerAccount extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'site_owner_list' => 'array',
 		'_links' => '\PHPFUI\ConstantContact\Definition\PaginationLinks',
 

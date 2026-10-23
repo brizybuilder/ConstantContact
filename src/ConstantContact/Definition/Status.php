@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class Status extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'list_count' => 'int',
 
 	];

@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class WebhooksSubscriptionBody extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'hook_uri' => 'string',
 
 	];

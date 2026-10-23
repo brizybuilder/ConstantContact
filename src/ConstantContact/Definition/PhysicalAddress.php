@@ -16,7 +16,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class PhysicalAddress extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'address_line1' => 'string',
 		'address_line2' => 'string',
 		'address_line3' => 'string',
@@ -28,7 +28,7 @@ class PhysicalAddress extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'address_line1' => 80,
 		'address_line2' => 80,
 		'address_line3' => 80,
@@ -36,7 +36,7 @@ class PhysicalAddress extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $minLength = [
+	protected static array $minLength = [
 		'address_line1' => 1,
 		'address_line2' => 1,
 		'address_line3' => 1,

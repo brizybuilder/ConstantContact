@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class SegmentsDTO extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'segments' => 'array<\PHPFUI\ConstantContact\Definition\SegmentMaster>',
 		'_links' => '\PHPFUI\ConstantContact\Definition\Link',
 

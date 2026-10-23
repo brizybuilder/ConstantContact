@@ -9,7 +9,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class EmailScheduleInput extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'scheduled_date' => '\PHPFUI\ConstantContact\DateTime',
 
 	];

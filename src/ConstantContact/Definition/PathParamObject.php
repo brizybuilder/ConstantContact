@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class PathParamObject extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'path_param_key' => 'string',
 		'path_param_value' => 'string',
 

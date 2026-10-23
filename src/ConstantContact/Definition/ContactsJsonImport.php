@@ -10,18 +10,18 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ContactsJsonImport extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'import_data' => 'array<\PHPFUI\ConstantContact\Definition\JsonImportContact>',
 		'list_ids' => 'array<\PHPFUI\ConstantContact\UUID>',
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'list_ids' => 50,
 
 	];
 
-	protected static $minLength = [
+	protected static array $minLength = [
 		'list_ids' => 1,
 
 	];

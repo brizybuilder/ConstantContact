@@ -15,7 +15,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class SSOUser extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'first_name' => 'string',
 		'last_name' => 'string',
 		'role_name' => 'string',
@@ -26,7 +26,7 @@ class SSOUser extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'first_name' => 80,
 		'last_name' => 80,
 		'contact_email' => 80,

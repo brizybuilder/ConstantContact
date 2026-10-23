@@ -14,7 +14,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class EmailLinkClickCount extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'link_url' => 'string',
 		'url_id' => 'string',
 		'unique_clicks' => 'int',

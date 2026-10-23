@@ -19,7 +19,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class TrackingActivitySmsChannelDTO extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'country_code' => 'string',
 		'state' => 'string',
 		'formatted_international' => 'string',

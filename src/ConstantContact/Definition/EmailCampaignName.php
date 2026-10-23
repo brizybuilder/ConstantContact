@@ -9,12 +9,12 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class EmailCampaignName extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'name' => 'string',
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'name' => 80,
 
 	];

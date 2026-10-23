@@ -14,7 +14,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class CustomFieldResource extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'custom_field_id' => '\PHPFUI\ConstantContact\UUID',
 		'label' => 'string',
 		'name' => 'string',
@@ -24,7 +24,7 @@ class CustomFieldResource extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'label' => 50,
 		'name' => 50,
 

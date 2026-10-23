@@ -22,7 +22,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class PlanTiersObject extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'plan_type' => 'string',
 		'current_tiers' => 'array<\PHPFUI\ConstantContact\Definition\TierObject>',
 		'billing_status' => 'string',

@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class StatsError extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'error_key' => 'string',
 		'error_message' => 'string',
 

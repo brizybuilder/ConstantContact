@@ -18,7 +18,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class ActivityDeleteStatus extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'activity_id' => '\PHPFUI\ConstantContact\UUID',
 		'state' => 'string',
 		'started_at' => '\PHPFUI\ConstantContact\DateTime',

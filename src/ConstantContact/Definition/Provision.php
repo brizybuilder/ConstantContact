@@ -27,7 +27,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class Provision extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'contact_email' => 'string',
 		'contact_phone' => 'string',
 		'country_code' => 'string',
@@ -50,7 +50,7 @@ class Provision extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $maxLength = [
+	protected static array $maxLength = [
 		'contact_email' => 80,
 		'contact_phone' => 25,
 		'country_code' => 3,
@@ -66,7 +66,7 @@ class Provision extends \PHPFUI\ConstantContact\Definition\Base
 
 	];
 
-	protected static $minLength = [
+	protected static array $minLength = [
 		'contact_phone' => 5,
 		'country_code' => 2,
 		'organization_name' => 1,

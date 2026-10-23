@@ -10,7 +10,7 @@ namespace PHPFUI\ConstantContact\Definition;
  */
 class TagsLinks extends \PHPFUI\ConstantContact\Definition\Base
 	{
-	protected static $fields = [
+	protected static array $fields = [
 		'href' => 'string',
 		'next' => '\PHPFUI\ConstantContact\Definition\ReportingNext',
 
